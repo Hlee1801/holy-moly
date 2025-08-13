@@ -1,6 +1,6 @@
 package com.ps.orderservice.response;
 
-import com.ps.orderservice.dto.UserDto;
+import com.ps.orderservice.model.UserDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

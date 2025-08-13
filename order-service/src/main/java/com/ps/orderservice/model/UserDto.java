@@ -1,4 +1,4 @@
-package com.ps.orderservice.dto;
+package com.ps.orderservice.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

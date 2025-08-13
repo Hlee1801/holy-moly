@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8084
 
 spring:
   application:
@@ -18,6 +18,11 @@ spring:
               uri: lb://order-service
               predicates:
                 - Path=/api/orders/**
+
+            - id: notification-service
+              uri: lb://notification-service
+              predicates:
+                - Path=/api/notification/**
 eureka:
   client:
     service-url:

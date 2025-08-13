@@ -1,6 +1,7 @@
 package com.ps.orderservice.controller;
 
-import com.ps.orderservice.dto.UserDto;
+import com.ps.orderservice.service.OrderService;
+import com.ps.orderservice.model.UserDto;
 import com.ps.orderservice.entity.Order;
 import com.ps.orderservice.exception.OrderServiceException;
 import com.ps.orderservice.feign.UserClient;
@@ -19,8 +20,9 @@ public class OrderController {
 
     private final OrderRepository orderRepository;
     private final UserClient userClient;
+    private final OrderService orderService;
 
-    @PostMapping
+    @PostMapping("/create")
     public Order createOrder(@RequestBody Order order) {
         return orderRepository.save(order);
     }
@@ -39,5 +41,11 @@ public class OrderController {
         UserDto user = userClient.getUserById(order.getUserId());
 
         return new OrderResponse(order.getId(), order.getProduct(), order.getPrice(), user);
+    }
+
+
+    @PostMapping
+    public Order placeOrder(@RequestBody Order order) {
+        return orderService.createOrder(order);
     }
 }

@@ -1,6 +1,6 @@
 package com.ps.orderservice.feign;
 
-import com.ps.orderservice.dto.UserDto;
+import com.ps.orderservice.model.UserDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
